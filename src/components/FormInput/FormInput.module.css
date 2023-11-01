@@ -1,0 +1,10 @@
+.customCard{
+    padding: 30px !important;
+}
+
+.message{
+    font-size: 11px;
+    color: red;
+    letter-spacing: 1px;
+    margin-top: 7px;
+}

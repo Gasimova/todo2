@@ -1,0 +1,12 @@
+.formBox{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 70% !important;
+    flex-direction: row !important;
+}
+
+.btnForm{
+    width: 100px;
+    padding: 0px 50px;
+    height: 60px;
+}
