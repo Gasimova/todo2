@@ -1,5 +1,5 @@
 import { formGroupClasses, Grid } from '@mui/material'
-import React, { useReducer, useState } from 'react'
+import React, { useCallback, useReducer, useState } from 'react'
 import { importData, reducer } from '../../reducer'
 import { FormBox } from '../FormBox'
 import { TableBox } from '../TableBox'
@@ -10,7 +10,7 @@ export const MainBox = () => {
 
     const [state, dispatch] = useReducer(reducer, importData)
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const name = e.target.name
         const value = e.target.value
 
@@ -20,11 +20,11 @@ export const MainBox = () => {
         }
         setForm(callBack)
 
-    }
+    })
 
 
     const disabledBtn = !form?.fullname?.trim() || !form?.position?.trim() || !form?.age || !form?.phone
-    const handleSubmit = () => {
+    const handleSubmit = useCallback(() => {
         form.id = Math.floor(Math.random()*10)
         dispatch({
             type: "ADD_TODO",
@@ -33,16 +33,16 @@ export const MainBox = () => {
             }
         })
         setForm()
-    }
+    })
 
-    const handleDelete = (id) => {
+    const handleDelete = useCallback((id) => {
         dispatch({
             type: "DELETE_TODO",
             payload: {
                 id
             }
         })
-    }
+    })
 
     return (
         <>
