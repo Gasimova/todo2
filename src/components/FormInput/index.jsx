@@ -20,8 +20,8 @@ export const FormInput = ({placeholder, inpuId, type, handleChange, message, def
     return (
         <>
             <FormControl className={styles.customCard}>
-                <Input onChange={handleChange} value={defaultValue}  name={inpuId} id={inpuId} type={type} placeholder={placeholder}/>
-                <span className={styles.message} >{ErrorMessage(defaultValue)}</span>
+                <Input onChange={handleChange} value={defaultValue ? defaultValue : ''}  name={inpuId} id={inpuId} type={type} placeholder={placeholder}/>
+                <span className={styles.message} >{ErrorMessage(defaultValue ? defaultValue :'')}</span>
             </FormControl>
         </>
     )

@@ -36,7 +36,7 @@ export const TableBox = ({data, handleDelete}) => {
                                 <TableCell align="right">{d.position}</TableCell>
                                 <TableCell align="right">{d.age}</TableCell>
                                 <TableCell align="right">{d.phone}</TableCell>
-                                <TableCell align="right"> <Button onClick={()=>handleDelete(index)} className={styles.deleteBtn}> <Delete /> </Button> </TableCell>
+                                <TableCell align="right"> <Button onClick={()=>handleDelete(d.id)} className={styles.deleteBtn}> <Delete /> </Button> </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
